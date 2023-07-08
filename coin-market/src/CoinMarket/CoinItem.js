@@ -54,7 +54,6 @@ const CoinItem = () => {
     });
     return sortedData;
   };
-
   const onToggle = () => {
     setSortID((id) => (id === "desc" ? "asc" : "desc"));
   };

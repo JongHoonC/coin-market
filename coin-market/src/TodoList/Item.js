@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import List from "./List";
 
 const Item = ({ items, onRemove, setItems }) => {
   // 수정하고 바뀐 정보를 업데이트 할 수 있도록 state 선언
   const [replaceData, setReplaceData] = useState(null);
+
+  const focusRef = useRef(null);
   const onReplace = (id) => {
     setReplaceData(id);
+    if (focusRef.current) {
+      focusRef.current.focus();
+    }
   };
+
   // 수정한 배열 ID를 저장
   const onConfirm = (id, type, editedText) => {
     setReplaceData(id);
@@ -44,6 +50,7 @@ const Item = ({ items, onRemove, setItems }) => {
           onReplace={onReplace}
           replaceData={replaceData}
           onConfirm={onConfirm}
+          focusRef={focusRef}
         />
       ))}
     </div>

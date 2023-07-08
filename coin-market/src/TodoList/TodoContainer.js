@@ -21,6 +21,8 @@ const TodoContainer = () => {
       ...dataValue, // 기존 dataValue 객체를 복사 한다.
       [name]: value, // name 이라는 키를 가진 값을 value로 설정한다
     });
+
+    console.log(setDataValue);
   };
   const dataSet = () => {
     // 유효성 검사 하는 부분

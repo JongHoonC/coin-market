@@ -94,15 +94,12 @@ const CoinList = ({
       </th>
       <th>${localPrice}</th>
       <th className={`${changeColor1()}`}>
-        <div></div>
         <p>{fixedHour1}%</p>
       </th>
       <th className={`${changeColor2()}`}>
-        <div></div>
         <p>{fixedHour24}%</p>
       </th>
       <th className={`${changeColor3()}`}>
-        <div></div>
         <p>{fixedday7}%</p>
       </th>
       <th>${localfixedMarketCap}</th>
