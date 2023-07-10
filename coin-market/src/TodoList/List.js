@@ -1,19 +1,11 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Button from "./Button";
 import "../App.css";
-// item.js 에서 데이터를 넘겨받아 넘겨받은 데이터들을 화면에 뿌려주는 컵포넌트
-const List = ({
-  item,
-  onRemove,
-  onReplace,
-  replaceData,
-  onConfirm,
-  focusRef,
-}) => {
-  // 수정되기 전 초기 값이니까 item.text를 초기값으로 useState 설정한다
+
+const List = ({ item, onRemove, onReplace, replaceData, onConfirm }) => {
   const [editedText, setEditedText] = useState(item.text);
-  console.log(focusRef);
-  // input 요소의 값이 변경될 때마다 값을 editedText 으로 업데이트
+  const inputRef = useRef(null);
+
   const inputChange = (e) => {
     setEditedText(e.target.value);
   };
@@ -23,17 +15,21 @@ const List = ({
       <input disabled type="text" defaultValue={item.date} />
 
       <input
-        {...(focusRef === "input" ? { disabled: true } : null)}
+        // disabled={replaceData === item.id ? false : true}
+        ref={inputRef}
         type="text"
         value={editedText}
         onChange={inputChange}
-        ref={focusRef}
+        id={item.id}
       />
 
       <Button
         onRemove={onRemove}
         item={item}
-        onReplace={onReplace}
+        onReplace={(id) => {
+          onReplace(id);
+          inputRef.current.focus();
+        }}
         replaceData={replaceData}
         onConfirm={() => onConfirm(item.id, "confirm", editedText)}
       />

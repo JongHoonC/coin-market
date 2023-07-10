@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/CoinContainer" element={<CoinContainer />} />
-        <Route path="/CoinContainer/:rank" element={<CoinDetail />} />
+        <Route path="/CoinContainer/:name" element={<CoinDetail />} />
         <Route path="/TodoList" element={<TodoList />} />
       </Routes>
     </div>

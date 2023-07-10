@@ -169,9 +169,9 @@
 }
 
 .nameSmallText {
+  margin-left: 20px;
   font-weight: bold;
   color: #808a9d;
-  margin-left: 20px;
 }
 
 .nameNprice {
@@ -254,9 +254,9 @@
 
 .capN > p:nth-child(1) {
   display: flex;
+  margin-bottom: 10px;
   font-size: 12px;
   color: #58667e;
-  margin-bottom: 10px;
 }
 
 .capN > p:nth-child(1) > span {
@@ -348,9 +348,9 @@
 }
 .fully > p:nth-child(1) {
   display: flex;
+  margin-bottom: 10px;
   font-size: 12px;
   color: #58667e;
-  margin-bottom: 10px;
 }
 .fully > p:nth-child(1) > span {
   width: 14px;
@@ -381,20 +381,46 @@
   background-color: #16c784;
 }
 .minHourCO > p:nth-child(3) {
-  color: #ff0000;
   font-weight: bold;
+  color: #ff0000;
 }
 .plusHourCO > p:nth-child(3) {
-  color: #16c784;
   font-weight: bold;
+  color: #16c784;
 }
 .up0 {
-  color: #16c784;
+  position: relative;
   font-weight: bold;
+  color: #16c784;
 }
 
 .down0 {
-  color: #ff0000;
+  position: relative;
+  width: 100px;
   font-weight: bold;
-  width: 90px;
+  color: #ff0000;
+}
+
+.up0 > div {
+  position: absolute;
+  bottom: 36px;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #16c784;
+  border-left: 6px solid transparent;
+}
+
+.down0 > div {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid #ff0000;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid transparent;
 }

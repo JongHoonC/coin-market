@@ -59,13 +59,39 @@ const CoinList = ({
       return "up0";
     }
   };
+
+  const absFixedHour1 = () => {
+    if (fixedHour1 < 0) {
+      const absFixedHour1 = Math.abs(fixedHour1);
+      return absFixedHour1;
+    } else {
+      return fixedHour1;
+    }
+  };
+  const absFixedHour24 = () => {
+    if (fixedHour24 < 0) {
+      const absFixedHour24 = Math.abs(fixedHour24);
+      return absFixedHour24;
+    } else {
+      return fixedHour24;
+    }
+  };
+  const absFixedDay7 = () => {
+    if (fixedday7 < 0) {
+      const absFixedDay7 = Math.abs(fixedday7);
+      return absFixedDay7;
+    } else {
+      return fixedday7;
+    }
+  };
+
   return (
     <tr
       className="tr"
       onClick={() => {
-        navigate(`/CoinContainer/${rank}`, {
+        navigate(`/CoinContainer/${name}`, {
           state: {
-            name: { name },
+            rank: { rank },
             symbol: { symbol },
             price: { localPrice },
             imgID: { imgID },
@@ -94,13 +120,16 @@ const CoinList = ({
       </th>
       <th>${localPrice}</th>
       <th className={`${changeColor1()}`}>
-        <p>{fixedHour1}%</p>
+        <div></div>
+        <p>{absFixedHour1()}%</p>
       </th>
       <th className={`${changeColor2()}`}>
-        <p>{fixedHour24}%</p>
+        <div></div>
+        <p>{absFixedHour24()}%</p>
       </th>
       <th className={`${changeColor3()}`}>
-        <p>{fixedday7}%</p>
+        <div></div>
+        <p>{absFixedDay7()}%</p>
       </th>
       <th>${localfixedMarketCap}</th>
       <th>${localFixedVolume_24h}</th>

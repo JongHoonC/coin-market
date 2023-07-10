@@ -1,11 +1,21 @@
 import { useParams, useLocation } from "react-router-dom";
 import { Reset } from "styled-reset";
+// import React, { useState } from "react";
 import "../App.css";
 const CoinDetail = () => {
-  const { rank } = useParams();
+  const { name } = useParams();
   const location = useLocation();
 
-  const name = location.state.name;
+  // const [childElements, setChildElements] = useState([]);
+  // const [isClicked, setIsClicked] = useState(false);
+  // const addChildElement = () => {
+  //   if (!isClicked) {
+  //     const newElement = <div>New element</div>;
+  //     setChildElements((prevElements) => [...prevElements, newElement]);
+  //     setIsClicked(true);
+  //   }
+  // };
+  const rank = location.state.rank;
   const symbol = location.state.symbol;
   const price = location.state.price;
   const imgID = location.state.imgID;
@@ -47,12 +57,17 @@ const CoinDetail = () => {
               src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${imgID.imgID}.png`}
               alt={name}
             />
-            <p>{name.name}</p>
+            <p>{name}</p>
             <p>{symbol.symbol}</p>
           </div>
           <div className="Rank">
-            <p>Rank #{rank}</p>
-            <p>Coin</p>
+            <p>Rank #{rank.rank}</p>
+            <p
+            // onClick={addChildElement}\
+            >
+              Coin
+              {/* {childElements} */}
+            </p>
           </div>
         </div>
         <div className="CON2">
@@ -102,7 +117,6 @@ const CoinDetail = () => {
           </div>
         </div>
       </div>
-
       <div className="graph"></div>
     </div>
   );
