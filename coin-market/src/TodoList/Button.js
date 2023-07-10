@@ -1,18 +1,10 @@
 import React from "react";
 import "../App.css";
-const Button = ({
-  onRemove,
-  item,
-  onReplace,
-  replaceData = null,
-  onConfirm,
-}) => {
+const Button = ({ onRemove, item, onReplace, replaceData, onConfirm }) => {
   const btnStyle = {
     width: "20px",
     height: "20px",
   };
-  console.log(id);
-  // console.log({ replaceData } === { item });
   return (
     <div className="buttonStyle">
       {replaceData === item.id ? (

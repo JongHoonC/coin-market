@@ -26,8 +26,8 @@ const List = ({ item, onRemove, onReplace, replaceData, onConfirm }) => {
       <Button
         onRemove={onRemove}
         item={item}
-        onReplace={(id) => {
-          onReplace(id);
+        onReplace={() => {
+          onReplace(item.id);
           inputRef.current.focus();
         }}
         replaceData={replaceData}

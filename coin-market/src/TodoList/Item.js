@@ -31,10 +31,8 @@ const Item = ({ items, onRemove, setItems }) => {
           onRemove={onRemove}
           item={item}
           key={item.id}
-          onReplace={onReplace}
-          replaceData={(id) => {
-            replaceData(id);
-          }}
+          onReplace={() => onReplace(item.id)}
+          replaceData={replaceData}
           onConfirm={onConfirm}
         />
       ))}
